@@ -18,5 +18,10 @@
   "bugs": {
     "url": "https://github.com/rockchalkwushock/name-later/issues"
   },
-  "homepage": "https://github.com/rockchalkwushock/name-later#readme"
+  "homepage": "https://github.com/rockchalkwushock/name-later#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "http": "0.0.0",
+    "path": "^0.12.7"
+  }
 }
