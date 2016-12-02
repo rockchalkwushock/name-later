@@ -24,6 +24,12 @@
     "http": "0.0.0",
     "path": "^0.12.7"
   },
+  "babel": {
+  "presets": [
+    "es2015",
+    "stage-0"
+  ]
+},
   "devDependencies": {
     "babel-cli": "^6.18.0",
     "babel-core": "^6.18.2",
