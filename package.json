@@ -4,7 +4,7 @@
   "description": "something...don't know what but something!",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "server": "babel-node server.js --presets es2015"
   },
   "repository": {
     "type": "git",
