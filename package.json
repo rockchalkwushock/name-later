@@ -4,6 +4,8 @@
   "description": "something...don't know what but something!",
   "main": "src/client/client.jsx",
   "scripts": {
+    "test": "mocha --compilers js:babel-register tests/**/*.js*",
+    "start": "npm run build && npm run server",
     "server": "babel-node src/server/server.js --presets es2015",
     "mkdir": "mkdir -p build",
     "build": "npm run clean && npm run mkdir && npm run build:html && npm run build:js",
@@ -51,8 +53,12 @@
     "babel-preset-react": "^6.16.0",
     "babel-preset-stage-0": "^6.16.0",
     "babel-register": "^6.18.0",
+    "chai": "^3.5.0",
+    "enzyme": "^2.6.0",
     "eslint": "^3.11.1",
     "eslint-config-rallycoding": "^3.1.0",
+    "mocha": "^3.2.0",
+    "react-addons-test-utils": "^15.4.1",
     "webpack": "^1.13.3"
   }
 }
