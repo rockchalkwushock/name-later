@@ -4,13 +4,13 @@ import { app } from './server';
 import { MONGO_URL, PORT } from './config';
 
 export const startServer = (callback) => {
-  // DATABASE
+  // DEVELOPEMENT SERVER
   mongoose.connect(MONGO_URL, err => {
     if (err && callback) callback(err);
-  // SERVER
+  // PRODUCTION SERVER
     app.listen(PORT, () => {
-      const message = err ? `Error: ${err}` :
-                            `Server listening on localhost:${PORT}`;
+      const message = err ? console.warn('Warning:', err) :
+                            console.log(`Server listening on localhost:${PORT}`);
       if (callback) callback(message);
     });
   });

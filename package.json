@@ -6,7 +6,8 @@
   "scripts": {
     "test": "mocha --compilers js:babel-register src/test/**/*.js*",
     "start": "npm run build && npm run server",
-    "server": "babel-node src/server/server.js --presets es2015",
+    "dev": "npm run build && nodemon --exec babel-node src/server/server.js",
+    "server": "babel-node src/server/server.js",
     "mkdir": "mkdir -p build",
     "build": "npm run clean && npm run mkdir && npm run build:html && npm run build:js",
     "watch": "npm run watch:html & npm run watch:js",
@@ -63,6 +64,7 @@
     "eslint": "^3.11.1",
     "eslint-config-rallycoding": "^3.1.0",
     "mocha": "^3.2.0",
+    "nodemon": "^1.11.0",
     "react-addons-test-utils": "^15.4.1",
     "webpack": "^1.13.3"
   }
