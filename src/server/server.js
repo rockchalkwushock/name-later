@@ -1,15 +1,15 @@
 import express from 'express';
-import { Server } from 'http';
+import bodyParser from 'body-parser';
 
-import { PORT } from './config';
+import { startServer } from './startup';
 
-const app = express();
-const server = Server(app);
+export const app = express();
 
+app.use(bodyParser.json());
 app.use(express.static('build'));
 
-server.listen(PORT, err => {
-  const message = err ? `Error: ${err}` :
-                        `Server listening on localhost:${PORT}`;
-  return console.log(message);
-});
+// DEVELOPMENT || TESTING SERVER
+
+if (require.main === module) {
+    startServer(err => { if (err) console.error(err); });
+}
