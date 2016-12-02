@@ -2,7 +2,7 @@
   "name": "name-later",
   "version": "1.0.0",
   "description": "something...don't know what but something!",
-  "main": "src/client/client.js",
+  "main": "src/client/client.jsx",
   "scripts": {
     "server": "babel-node src/server/server.js --presets es2015",
     "mkdir": "mkdir -p build",
