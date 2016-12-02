@@ -2,5 +2,7 @@
   "extends": "rallycoding",
   "globals": {
     "document": true,
+    "describe": true,
+    "it": true,
   }
 }
