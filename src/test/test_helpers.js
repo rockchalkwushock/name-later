@@ -10,12 +10,13 @@ before((done) => {
           .on('error', error => { console.warn('Warning', error); });
 });
 
-beforeEach((done) => {
-  const { auth } = mongoose.connection.collections;
-  auth.drop(() => {
-    done();
-  });
-});
+// beforeEach((done) => {
+//   const { auth } = mongoose.connection.collections;
+//   console.log(auth);
+//   auth.drop(() => {
+//     done();
+//   });
+// });
 
 /*
   TODO:
