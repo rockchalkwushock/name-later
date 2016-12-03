@@ -1,11 +1,11 @@
 import { Router } from 'express';
-import { authenticate } from 'passport';
+import passport from 'passport';
 import * as Auth from './controller';
 import './passportConfig';
 
 const authRoute = new Router();
 
-const requireLogin = authenticate('local', { session: false });
+const requireLogin = passport.authenticate('local', { session: false });
 
 authRoute.route('/auth/signup').post(Auth.signup);
 authRoute.route('/auth/login').post(requireLogin, Auth.login);
