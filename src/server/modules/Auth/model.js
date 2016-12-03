@@ -1,4 +1,4 @@
-import { model, Schema } from 'mongoose';
+import mongoose, { Schema } from 'mongoose';
 import { compare, hash } from 'bcrypt';
 import { isEmail } from 'validator';
 
@@ -35,6 +35,6 @@ AuthSchema.methods.comparePassword = function (candidatePassword, callback) {
   });
 };
 
-const Auth = model('auth', AuthSchema);
+const Auth = mongoose.model('auth', AuthSchema);
 
 export default Auth;
