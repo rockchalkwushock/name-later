@@ -35,6 +35,6 @@ AuthSchema.methods.comparePassword = function (candidatePassword, callback) {
   });
 };
 
-const Auth = mongoose.model('auth', AuthSchema);
+const Auth = mongoose.model('auths', AuthSchema);
 
 export default Auth;

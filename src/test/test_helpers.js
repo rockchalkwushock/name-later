@@ -18,6 +18,13 @@ before((done) => {
 //   });
 // });
 
+after((done) => {
+  const { auths } = mongoose.connection.collections;
+  auths.drop(() => {
+    done();
+  });
+});
+
 /*
   TODO:
   1. Make Auth collection in mLab.
