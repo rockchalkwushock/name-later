@@ -1,5 +1,7 @@
 language: node_js
 node_js: node
+env:
+  - CXX=g++-4.8
 services:
 - mongodb
 addons:
@@ -8,9 +10,10 @@ addons:
     - mongodb-3.2-precise
     packages:
     - mongodb-org-server
+    - g++-4.8
 # deploy:
 #   provider: heroku
 #   api_key:
 #   app:
 #   on:
-#     repo: 
+#     repo:
