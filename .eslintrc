@@ -4,5 +4,6 @@
     "document": true,
     "describe": true,
     "it": true,
+    "before": true,
   }
 }
