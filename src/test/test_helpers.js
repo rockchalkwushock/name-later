@@ -10,7 +10,14 @@ before((done) => {
           .on('error', error => { console.warn('Warning', error); });
 });
 
+beforeEach((done) => {
+  const { auth } = mongoose.connection.collections;
+  auth.drop(() => {
+    done();
+  });
+});
+
 /*
   TODO:
-  1. Make Auth/User collection in mLab.
+  1. Make Auth collection in mLab.
 */
