@@ -1,8 +1,6 @@
-import { PASSWORD, USER } from './config.js';
-
 export const PORT = process.env.PORT || 3000;
 export const MONGO_URL = process.env.MONGO_URL ||
                             global.MONGO_URL ||
                             (process.env.NODE_ENV === 'production' ?
-                                 `mongodb://${USER}:${PASSWORD}@ds119728.mlab.com:19728/name_later` :
+                                 'mongodb://heroku_4qnzkffb:ns2hggqal9jsopk5icdh92lumi@ds119598.mlab.com:19598/heroku_4qnzkffb' :
                                  'mongodb://localhost/name-later-dev');
