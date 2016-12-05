@@ -3,7 +3,7 @@ node_js: node
 services:
 - mongodb
 env:
-  - CXX=g++-4.8
+- CXX=g++-4.8
 addons:
   apt:
     sources:
@@ -12,12 +12,10 @@ addons:
     packages:
     - mongodb-org-server
     - g++-4.8
-# deploy:
-#   provider: heroku
-#   api_key:
-#   app:
-#   on:
-#     repo:
-# I"m making this comment becasue I was an idiot and
-# did not put the ENVVARS in Trav!
-# Something in this last Turkey didn't jive!
+deploy:
+  provider: heroku
+  api_key:
+    secure: AeCRGWggXB83hKezPX2J0FXbZ10OyqXXt66cnFqBY2YMX+sxX6aaLq5e03Y8SmcdNHims+FUjyuO9wPoMcacOmUYXy5JE7hcNIrm7TG2oFU5aS50GZt6WY0KV8n2QqlouZa84i+5IUhLHvYHnVGRpFWuYwH0prpZuauwxB8CnfnSiWnlJIZfNjegXgrErRZStYRZ8xBnQ2Pe/WwmoQDigOwfknvqz5oYXore+FrMYcACfki+SchAuF1H51ICQPdprbxPgbJH494pXmde/s0ypdz8SNbXY1vEdEQc5ccF71kBTO7psGeK7FpBtB2xs5EHTYGhhN5mSXmTTFiOjA/0Odbg8proJk1bBkDNxkWkXTLvsQWNU2s8/q4gLaK/hBfMHcOEm3QMPaUNef+3ocS5vycoi1njaPecsjLmvZhcrDhR3U4S45Zu4wSal9OIDhXn860CYtTJcA31FIBKYlWyKVWClSAWgHm6QxvbsrTSYgxfVNh6gsruJdvH3icq4GH89DgU/6DeUyjIT5iRis1yH+nDpcmkYhZUGWXJ7TnMzbJD+E+U9JHqxGfeHL1gtfv8/0P1jAyeK9W57uhLb8oBSB21bRNSwL8xK9wKIVW2HoS28K29bEZ7Uo1S7a46Alp7GdtNC/bsW2BIlg3gCJkT7wtKKlh9g73gVpdxblGJZFk=
+  app: name-later
+  on:
+    repo: rockchalkwushock/name-later
