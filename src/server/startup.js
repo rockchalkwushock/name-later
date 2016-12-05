@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-import { app } from './server';
+import { app } from './index';
 import { MONGO_URL, PORT } from './config';
 
 export const startServer = (callback) => {
