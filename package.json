@@ -2,11 +2,12 @@
   "name": "name-later",
   "version": "1.0.0",
   "description": "something...don't know what but something!",
-  "main": "src/client/client.jsx",
+  "main": "src/client/index.jsx",
   "scripts": {
-    "test": "mocha --compilers js:babel-register src/test/**/*.js*",
+    "test": "mocha --compilers js:babel-register test/**/*.js*",
     "start": "npm run build && npm run server",
-    "server": "babel-node src/server/server.js --presets es2015",
+    "dev": "npm run build && nodemon --exec babel-node src/server/index.js",
+    "server": "babel-node src/server/index.js",
     "mkdir": "mkdir -p build",
     "build": "npm run clean && npm run mkdir && npm run build:html && npm run build:js",
     "watch": "npm run watch:html & npm run watch:js",
@@ -32,12 +33,17 @@
   },
   "homepage": "https://github.com/rockchalkwushock/name-later#readme",
   "dependencies": {
+    "bcrypt": "^0.8.7",
+    "body-parser": "^1.15.2",
     "chai": "^3.5.0",
     "enzyme": "^2.6.0",
     "express": "^4.14.0",
-    "http": "0.0.0",
+    "mongoose": "^4.7.1",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
     "react": "^15.4.1",
-    "react-dom": "^15.4.1"
+    "react-dom": "^15.4.1",
+    "validator": "^6.2.0"
   },
   "babel": {
     "presets": [
@@ -55,9 +61,11 @@
     "babel-preset-react": "^6.16.0",
     "babel-preset-stage-0": "^6.16.0",
     "babel-register": "^6.18.0",
+    "chai": "^3.5.0",
     "eslint": "^3.11.1",
     "eslint-config-rallycoding": "^3.1.0",
     "mocha": "^3.2.0",
+    "nodemon": "^1.11.0",
     "react-addons-test-utils": "^15.4.1",
     "webpack": "^1.13.3"
   }

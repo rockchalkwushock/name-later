@@ -2,7 +2,10 @@
   "extends": "rallycoding",
   "globals": {
     "document": true,
-    "describe": true,
-    "it": true,
+    "window": true,
+  },
+  "env": {
+    "browser": true,
+    "mocha": true
   }
 }
