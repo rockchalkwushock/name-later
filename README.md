@@ -1,5 +1,6 @@
 # name-later
 [![Build Status](https://travis-ci.org/rockchalkwushock/name-later.svg?branch=auth)](https://travis-ci.org/rockchalkwushock/name-later)
+[![Dependencies Status](https://david-dm.org/rockchalkwushock/name-later.svg?branch=auth)](https://david-dm.org/rockchalkwushock/name-later.svg)
 I have no idea just going with it
 
 ## Goals for the moment:
