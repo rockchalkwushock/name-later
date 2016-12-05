@@ -4,7 +4,7 @@
   "description": "something...don't know what but something!",
   "main": "src/client/index.jsx",
   "scripts": {
-    "test": "mocha --compilers js:babel-register src/test/**/*.js*",
+    "test": "mocha --compilers js:babel-register test/**/*.js*",
     "start": "npm run build && npm run server",
     "dev": "npm run build && nodemon --exec babel-node src/server/index.js",
     "server": "babel-node src/server/index.js",

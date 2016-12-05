@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import { MONGO_URL } from '../server/config';
+import { MONGO_URL } from '../config/env';
 
 mongoose.Promise = global.Promise;
 

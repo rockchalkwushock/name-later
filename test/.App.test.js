@@ -2,7 +2,7 @@ import React from 'react';
 import { expect } from 'chai';
 import { shallow } from 'enzyme';
 
-import { App } from '../client/components/App';
+import { App } from '../src/client/components/App';
 
 describe('<App />', () => {
   it('should have the name: Layout', () => {

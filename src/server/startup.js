@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 
 import { app } from './index';
-import { MONGO_URL, PORT } from './config';
+import { MONGO_URL, PORT } from '../../config/env';
 
 export const startServer = (callback) => {
   // DEVELOPEMENT SERVER

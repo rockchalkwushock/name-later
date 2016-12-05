@@ -2,7 +2,7 @@ import express from 'express';
 import bodyParser from 'body-parser';
 
 import { startServer } from './startup';
-import { PORT } from './config';
+import { PORT } from '../../config/env';
 import authRoute from './modules/Auth/routes';
 
 export const app = express();

@@ -1,5 +1,5 @@
 import assert from 'assert';
-import Auth from '../server/modules/Auth/model';
+import Auth from '../src/server/modules/Auth/model'; 
 
 describe('Create Auth User by local login', () => {
   it('Saves an Auth User to MongoDB', (done) => {
