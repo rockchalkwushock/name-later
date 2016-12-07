@@ -44,3 +44,6 @@ build
 
 # env
 config.js
+
+# Heroku Local Envvars
+.env
