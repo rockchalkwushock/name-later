@@ -7,16 +7,15 @@
     "test": "mocha --compilers js:babel-register test/**/*.js*",
     "postinstall": "npm run build",
     "start": "babel-node src/server/index.js",
-    "dev": "npm run build && nodemon --exec babel-node src/server/index.js",
+    "start:dev": "npm run build && npm run dev",
+    "dev": "webpack-dev-server --inline --hot --content-base build --history-api-fallback",
+    "heroku": "heroku local",
     "mkdir": "mkdir -p build",
     "build": "npm run clean && npm run mkdir && npm run build:html && npm run build:js",
-    "watch": "npm run watch:html & npm run watch:js",
     "clean": "rm -rf build",
     "build:html": "npm run clean:html && cp src/public/index.html build/",
-    "watch:html": "npm run build:html && chokidar src/public/index.html -c 'npm run build:html'",
     "clean:html": "rm -f build/index.html",
     "build:js": "npm run clean:js && webpack",
-    "watch:js": "npm run build:js && webpack --watch",
     "clean:js": "rm -f build/$npm_package_name.$npm_package_version.js build/$npm_package_name.$npm_package_version.js.map"
   },
   "repository": {
@@ -69,7 +68,7 @@
     "eslint": "^3.11.1",
     "eslint-config-rallycoding": "^3.1.0",
     "mocha": "^3.2.0",
-    "nodemon": "^1.11.0",
-    "react-addons-test-utils": "^15.4.1"
+    "react-addons-test-utils": "^15.4.1",
+    "webpack-dev-server": "^1.16.2"
   }
 }
