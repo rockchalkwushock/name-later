@@ -1,5 +1,5 @@
 import { isEmail } from 'validator';
-import Auth from './model';
+import User from './model';
 
 const message = {
   required: 'is required',
@@ -37,7 +37,7 @@ export const signup = (req, res) => {
     return res.status(422).json({ success: false, message: `An password ${required}` });
   }
 
-  const newUser = new Auth({ local: { email, password } });
+  const newUser = new User({ local: { email, password } });
 
   newUser.save()
          .then(user => {

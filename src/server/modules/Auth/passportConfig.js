@@ -1,14 +1,14 @@
 import passport from 'passport';
 import LocalStrategy from 'passport-local';
 
-import Auth from './model';
+import User from './model';
 
 const localOptions = { usernameField: 'email' };
 
 // LOCAL STRATEGY
 
 const localLogin = new LocalStrategy(localOptions, (email, password, done) => {
-  Auth.findOne({ 'local.email': email })
+  User.findOne({ 'local.email': email })
       .then(auth => {
         if (!auth) done(null, false);
         auth.comparePassword(password, (err, isMatch) => {

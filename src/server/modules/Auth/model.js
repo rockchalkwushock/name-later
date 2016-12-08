@@ -2,7 +2,7 @@ import mongoose, { Schema } from 'mongoose';
 import { compare, hash } from 'bcrypt';
 import { isEmail } from 'validator';
 
-const AuthSchema = new Schema({
+const userSchema = new Schema({
   local: {
     email: {
       type: String,
@@ -16,7 +16,7 @@ const AuthSchema = new Schema({
   }
 });
 
-AuthSchema.pre('save', function (next) {
+userSchema.pre('save', function (next) {
   if (!this.isModified('local.password')) next();
   const salt = 10;
   const data = this.local.password;
@@ -27,7 +27,7 @@ AuthSchema.pre('save', function (next) {
   });
 });
 
-AuthSchema.methods.comparePassword = function (candidatePassword, callback) {
+userSchema.methods.comparePassword = function (candidatePassword, callback) {
   const encrypted = this.local.password;
   compare(candidatePassword, encrypted, (err, isMatch) => {
     if (err) callback(err);
@@ -35,6 +35,6 @@ AuthSchema.methods.comparePassword = function (candidatePassword, callback) {
   });
 };
 
-const Auth = mongoose.model('auths', AuthSchema);
+const User = mongoose.model('users', userSchema);
 
-export default Auth;
+export default User;
