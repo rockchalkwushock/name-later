@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-import { app } from './index';
+import { server } from './index';
 import { MONGO_URL, PORT } from '../../config/env';
 
 export const startServer = (callback) => {
@@ -8,7 +8,7 @@ export const startServer = (callback) => {
   mongoose.connect(MONGO_URL, err => {
     if (err && callback) callback(err);
   // PRODUCTION SERVER
-    app.listen(PORT, () => {
+    server.listen(PORT, () => {
       const message = err ? console.warn('Warning:', err) :
                             console.log(`Server listening on localhost:${PORT}`);
       if (callback) callback(message);

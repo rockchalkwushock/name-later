@@ -1,12 +1,16 @@
 import express from 'express';
+import { Server } from 'http';
 import bodyParser from 'body-parser';
+import morgan from 'morgan';
 
 import { startServer } from './startup';
 import { PORT } from '../../config/env';
 import authRoute from './modules/Auth/routes';
 
-export const app = express();
+const app = express();
+export const server = Server(app);
 
+app.use(morgan('combined'));
 app.use(express.static('build'));
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', PORT);
