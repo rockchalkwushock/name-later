@@ -5,6 +5,7 @@ import { MONGO_URL, PORT } from '../../config/env';
 
 export const startServer = (callback) => {
   // DEVELOPEMENT SERVER
+  mongoose.Promise = global.Promise;
   mongoose.connect(MONGO_URL, err => {
     if (err && callback) callback(err);
   // PRODUCTION SERVER

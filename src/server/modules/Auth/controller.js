@@ -33,7 +33,7 @@ export const signup = (req, res) => {
     return res.status(422).json({ success: false, message: notEmail });
   }
 
-  if (password) {
+  if (!password) {
     return res.status(422).json({ success: false, message: `An password ${required}` });
   }
 
