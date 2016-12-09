@@ -19,8 +19,8 @@ before((done) => {
 // });
 
 after((done) => {
-  const { auths } = mongoose.connection.collections;
-  auths.drop(() => {
+  const { users } = mongoose.connection.collections;
+  users.drop(() => {
     done();
   });
 });
